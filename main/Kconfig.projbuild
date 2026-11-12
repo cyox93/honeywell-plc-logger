@@ -1,0 +1,16 @@
+menu "PLC Log"
+
+    config SC_PLCLOG_STAT_S
+        int "Status line period (s, 0 = off)"
+        default 60
+        help
+            A '# stat' line with the counters, so a quiet bus still shows the
+            logger was alive.
+
+    config SC_PLCLOG_OLED_FLIP
+        bool "OLED: rotate the screen 180°"
+        default n
+        help
+            Turn on if the text comes out upside down on your module.
+
+endmenu
