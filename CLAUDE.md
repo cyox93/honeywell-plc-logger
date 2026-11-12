@@ -4,10 +4,11 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-ESP-IDF v6.0 firmware (`plc-log`) for an **ESP32-C3 Super Mini** that logs the boiler-bus
-PLC traffic to an **OpenLog** (microSD) on UART0 and shows each room's state on a
-0.96" SSD1306 I2C OLED. It is the PLC part of the sibling
-repository `../x3-thermostat` (ESP32-S3 main-board) cut down to a logger: the RMT driver
+GitHub repo `honeywell-plc-logger` — a Honeywell thermostat PLC-protocol logger.
+ESP-IDF v6.0 firmware (project name `plc-log`, kept as-is) for an **ESP32-C3 Super Mini**
+that sniffs the Honeywell boiler-bus (MC200 / DT-200 / LT200SPD) PLC traffic, logs it to
+an **OpenLog** (microSD) on UART0 and shows each room's state on a 0.96" SSD1306 I2C OLED.
+It is the PLC part of the sibling repository `../x3-thermostat` (ESP32-S3 main-board) cut down to a logger: the RMT driver
 `components/plc/` and the core `eventloop` / `console` are copied from there unchanged
 except for C3 comments. If the driver changes in one repo, carry it to the other.
 

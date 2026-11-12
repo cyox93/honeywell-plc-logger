@@ -1,9 +1,14 @@
-# plc-log — 보일러 버스 PLC 패킷 로거 (ESP32-C3 Super Mini)
+# honeywell-plc-logger — Honeywell 온도조절기 PLC 통신 프로토콜 로거
 
-보일러 버스(MC200 · DT-200 · LT200SPD)의 PLC 프레임을 받아 **그룹마다 한 줄**로
-OpenLog(microSD)에 기록하고, 메시지에서 읽어 낸 **각방 상태를 OLED에 표시**한다. `x3-thermostat`의 PLC 드라이버(`components/plc/`)와
-plcloop의 UART0 덤프를 떼어 C3 보드 하나로 옮긴 것이다. 파형 · 메시지 규칙은
-[docs/plc-protocol.md](docs/plc-protocol.md) (`x3-thermostat`에서 복사).
+Honeywell 보일러 온도조절기 버스(MC200 밸브제어기 · DT-200 거실 · LT200SPD 각방)의
+PLC(전력선 통신) 프레임을 엿들어 **그룹마다 한 줄**로 OpenLog(microSD)에 기록하고,
+메시지에서 읽어 낸 **각방 상태를 OLED에 표시**하는 ESP32-C3 Super Mini 펌웨어다.
+버스에 끼워 두고 프로토콜을 해석하기 위한 자료를 모으는 용도다.
+
+- 파형 · 프레임 · 메시지 규칙: [docs/plc-protocol.md](docs/plc-protocol.md)
+- 형제 프로젝트 `x3-thermostat`(ESP32-S3 온도조절기 대체 보드)의 PLC 드라이버
+  (`components/plc/`)와 core `eventloop` · `console`을 떼어 C3 보드 하나로 옮긴 것이다.
+  ESP-IDF 프로젝트 이름 · 펌웨어 내부 이름은 `plc-log`로 둔다.
 
 ## 연결
 
