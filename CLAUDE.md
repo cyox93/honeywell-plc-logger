@@ -13,7 +13,8 @@ It is the PLC part of the sibling repository `../x3-thermostat` (ESP32-S3 main-b
 except for C3 comments. If the driver changes in one repo, carry it to the other.
 
 `docs/plc-protocol.md` is a copy from `x3-thermostat` — the waveform, frame and message
-rules. `README.md` has the wiring, OpenLog config and the log line format.
+rules — with a header note and C3 pin numbers added (§1, §6.1); §6–§8 still describe the
+S3 firmware. Keep those local edits when re-copying it. `README.md` has the wiring, OpenLog config and the log line format.
 
 ## Build
 
